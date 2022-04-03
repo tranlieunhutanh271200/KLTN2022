@@ -1,0 +1,2 @@
+obj\Debug\net5.0\Protos/Room.cs \
+obj\Debug\net5.0\Protos/RoomGrpc.cs: Protos/room.proto

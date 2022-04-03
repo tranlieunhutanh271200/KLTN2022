@@ -1,0 +1,19 @@
+.schedule-manage{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.dragndrop{
+
+}
+.drag-zone{
+    list-style-type: none;
+    width: 100%;
+}
+.drag-zone li{
+    padding: 20px 40px;
+    cursor: pointer;
+    background-color: var(--jade);
+    margin: 10px;
+    border: 1px solid var(--grey);
+}
