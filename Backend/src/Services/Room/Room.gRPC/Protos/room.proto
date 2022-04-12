@@ -1,0 +1,67 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Room.gRPC";
+
+package room;
+
+service RoomManager{
+	//Get rooms
+	rpc GetAllRooms(GetRoomsRequest) returns (GetRoomsResponse);
+	//Add room
+	rpc AddRoom(RoomModel) returns(RoomModel);
+	//Update room
+	rpc UpdateRoom(RoomModel) returns(RoomModel);
+	//Delete room
+	rpc DeleteRoom(RoomModel) returns(RoomModel);
+	//Get all available rooms for booking
+	rpc GetAvailableRooms(GetAvailableRoomsRequest) returns (GetRoomsResponse);
+	//Book room for purpose
+	rpc BookRoom(BookRoomRequest) returns (BookRoomResponse);
+	//Expand booking time
+	rpc ExpandBookTime(BookRoomRequest) returns (BookRoomResponse);
+	//Release room by manually
+	rpc ReleaseRoomManual(ReleaseRoomRequest) returns (ReleaseRoomResponse);
+	//Release rooms
+	rpc ReleaseRooms(ReleaseRoomsRequest) returns(ReleaseRoomResponse);
+}
+//Model
+message RoomModel{
+	string id = 1;
+	string roomName = 2;
+	string roomType = 3;
+	bool isAvailable = 4;
+}
+//GetAvailableRooms
+message GetRoomsRequest{
+	string roomType = 1;
+}
+message GetAvailableRoomsRequest{
+	string roomType = 1;
+}
+message GetRoomsResponse{
+	repeated RoomModel rooms = 1;
+}
+//BookRoom
+message BookRoomRequest{
+	string id = 1;
+	string teacherId = 2;
+	string purpose = 3;
+	string from = 4;
+	string to = 5;
+}
+message BookRoomResponse{
+	RoomModel room = 1;
+}
+message ReleaseRoomRequest{
+	RoomModel room = 1;
+}
+message ReleaseRoomResponse{
+	RoomModel room = 1;
+}
+
+message ReleaseRoomsRequest{
+	repeated RoomModel rooms = 1;
+}
+message ReleaseRoomsReponse{
+	repeated RoomModel rooms = 1;
+}

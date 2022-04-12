@@ -1,0 +1,14 @@
+.breadcrumb{
+    display: flex;
+    padding: 10px;
+}
+.breadcrumb a.fragment{
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 5px;
+    color: var(--dark);
+}
+.breadcrumb a.fragment::before{
+    content: '>';
+    margin-right: 10px;
+}

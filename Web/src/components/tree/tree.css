@@ -1,0 +1,33 @@
+.tree_component {
+  width: 100%;
+  text-align: left;
+  height: fit-content;
+}
+.tree_component .root button {
+  border: none;
+  padding: 15px 40px;
+  cursor: pointer;
+  background: var(--blue2);
+  color: white;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.tree_component .root button:hover {
+  background: var(--blue);
+}
+.tree_component .children {
+    margin-left: calc(30px);
+
+}
+.tree_component .children ul {
+    list-style-type: none;
+}
+.tree_component .children ul li {
+    margin-bottom: 5px;
+}
+.tree_component .children.collapsed {
+  display: none;
+  transition: all 0.5s;
+}

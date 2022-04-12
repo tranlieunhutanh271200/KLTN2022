@@ -1,0 +1,14 @@
+.jira-page{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 1000;
+}
+.text-center{
+    text-align: center;
+}
+.jira-page .drop .task{
+    padding: 40px;
+    background: #FC8E01;
+    border-radius: 20px;
+}
